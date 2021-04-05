@@ -1,0 +1,97 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style7.css">
+
+<title>نمودار کلاس برای نمونه دستگاه خودپرداز</title>
+
+</head>
+
+<body>
+
+<h2>نمودار کلاس برای نمونه دستگاه خودپرداز</h2>
+
+<p>
+در زیر نمودار کلاس برای سیستم دستگاه خودپرداز نشان داده شده است. ساختار اساسی نمودار کلاس از مسئولیت ها و روابطی که هنگام انجام کارت های CRC و نمودارهای تعامل کشف شده ناشی می شود.(اگر یک کلاس از کلاس دیگری به عنوان همکار استفاده کند یا درطی تعامل پیامی را به شی آن کلاس بفرستد در این صورت باید انجمنی وجود داشته باشد که اشیای آن کلاس ها را به هم پیوند دهد ) 
+</p>
+
+<p>
+درمورد سیستم خودپرداز، یکی از مسئولیت های خودپرداز این است که دسترسی به اجزای تشکیل دهنده آن را برای اشیای عمیات و تراکنش فراهم کند. بنابراین عملیات و تراکنش با دستگاه خودپرداز ارتباط دارند. 
+</p>
+
+<p>
+نیاز به کلاسهای مختلف در نمودار در نقاط مختلفی از روند طراحی کشف شد.
+</p>
+
+<ul>
+<li>برخی از کلاسها هنگام انجام تجزیه و تحلیل کشف شدند (به نموادار )  
+<a href="AnalysisClasses.html">کلاس تجزیه و تحلیل </a> مراجعه کنید.<br>&nbsp;</li>
+<li>برخی از کلاسها هنگام انجام کارتهای CRC کشف شدند<br>&nbsp;
+	<ul>
+	<li>پیام - برای نشان دادن پیامی به بانک استفاده می شود.</li>
+	<li>رسید - برای محصور کردن اطلاعات برای چاپ در رسید استفاده می شود.</li>
+	<li>وضعیت - برای نشان دادن مقدار بازگشتی از پیام به بانک استفاده می شود.</li>
+	<li>مانده ها - برای ثبت اطلاعات مانده موجودی توسط بانک استفاده می شود.</li>
+	</ul><br></li>
+<li>بعضی از کلاسها هنگام انجام طراحی دقیق یا نوشتن کد کشف شدند<br>&nbsp;
+	<ul>
+	<li>پول - برای نشان دادن مبالغ پول ، در مکان های مختلف استفاده می شود.</li>
+	<li>اطلاعات حساب - شامل نام انواع مختلفی از حساب است که مشتری می تواند انتخاب کند</li>
+	</ul></li>
+</ul>
+
+<p>
+یعنی ، طراحی شی گرا یک فرایند "آبشار" نیست - اکتشافاتی که هنگام انجام طراحی دقیق و کدگذاری انجام می شود می تواند بر طراحی کلی سیستم تأثیر بگذارد.
+</p>
+
+<p>
+برای جلوگیری از بزرگ شدن نمودار ، فقط نام هر کلاس نشان داده می شود - ویژگی و رفتار "محفظه ها" در طراحی دقیق نشان داده شده است ، اما در اینجا حذف شده است.
+</p>
+
+<hr>
+
+<h4>
+برای کسب اطلاعات بیشتر روی نماد کلاس کلیک کنید
+</h4>
+
+<p class="clickablediagram">
+<img src="ClassDiagram.gif" usemap="#ClassDiagramMap" alt="[ Class Diagram ]">
+
+<map name="ClassDiagramMap" id="ClassDiagramMap">
+<area shape="rect" coords="243,342,300,376" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#ATM" alt="Class ATM" title="Class ATM">
+<area shape="rect" coords="27,351,84,385" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#CardReader" alt="Class CardReader" title="Class CardReader">
+<area shape="rect" coords="144,234,201,268" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#CashDispenser" alt="Class CashDispenser" title="Class CashDispenser">
+<area shape="rect" coords="99,324,156,358" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#CustomerConsole" alt="Class CustomerConsole" title="Class CustomerConsole">
+<area shape="rect" coords="243,234,300,268" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#EnvelopeAcceptor" alt="Class EnvelopeAcceptor" title="Class EnvelopeAcceptor">
+<area shape="rect" coords="180,144,237,178" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Log" alt="Class Log" title="Class Log">
+<area shape="rect" coords="315,234,372,268" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#NetworkToBank" alt="Class NetworkToBank" title="Class NetworkToBank">
+<area shape="rect" coords="378,324,435,358" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#OperatorPanel" alt="Class OperatorPanel" title="Class OperatorPanel">
+<area shape="rect" coords="450,351,507,385" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#ReceiptPrinter" alt="Class ReceiptPrinter" title="Class ReceiptPrinter">
+<area shape="rect" coords="162,423,219,457" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Session" alt="Class Session" title="Class Session">
+<area shape="rect" coords="330,423,387,457" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Transaction" alt="Class Transaction" title="Class Transaction">
+<area shape="rect" coords="234,520,291,554" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Withdrawal" alt="Class Withdrawal" title="Class Withdrawal">
+<area shape="rect" coords="297,520,354,554" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Deposit" alt="Class Deposit" title="Class Deposit">
+<area shape="rect" coords="360,520,417,554" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Transfer" alt="Class Transfer" title="Class Transfer">
+<area shape="rect" coords="423,520,480,554" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Inquiry" alt="Class Inquiry" title="Class Inquiry">
+<area shape="rect" coords="90,27,147,61" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Money" alt="Class Money" title="Class Money">
+<area shape="rect" coords="333,144,390,178" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Status" alt="Class Status" title="Class Status">
+<area shape="rect" coords="279,90,336,124" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Message" alt="Class Message" title="Class Message">
+<area shape="rect" coords="450,27,507,61" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Balances" alt="Class Balances" title="Class Balances">
+<area shape="rect" coords="450,144,507,178" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Receipt" alt="Class Receipt" title="Class Receipt">
+<area shape="rect" coords="27,504,84,538" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Card" alt="Class Card" title="Class Card">
+<area shape="rect" coords="334,612,391,646" href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#AccountInformation" alt="Class AccountInformation" title="Class AccountInformation">
+</map>
+</p>
+
+<hr>
+
+<p class="navigation">
+<a href="CRCCards.html"><img src="Back.gif" alt="Link to previous page"></a>
+<a href="Statecharts.html"><img src="Next.gif" alt="Link to next page"></a>
+</p>
+
+
+
+
+</body></html>

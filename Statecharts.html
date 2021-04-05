@@ -1,0 +1,76 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style8.css">
+
+<title>نمودارهای حالت برای نمونه سیستم خودپرداز</title>
+
+</head>
+
+<body>
+
+<h2>نمودارهای حالت برای نمونه سیستم خودپرداز</h2>
+
+<p>
+سه مورد از مواردی که ما شناسایی کرده ایم رفتاری کاملاً پیچیده دارند که بتواند یک نمودار حالت برای آنها ایجاد کند. (اینها اشیایی هستند که به عنوان اصلی ترین اشیا کنترل کننده شناسایی شده اند.) 
+</p>
+
+<ul>
+<li><a href="#ATM">شیئی که نمایانگر خود دستگاه است</a> (مسئول موارد استفاده از راه اندازی سیستم و خاموش کردن سیستم)</li>
+<li><a href="#Session">شیئی که نمایانگر عملیات مشتری هستند
+</a> (مسئول موارداستفاده عملیات)</li>
+<li><a href="#Transaction">شیئی که نمایانگر یک تراکنش هستند</a> (مسئولیت مورد استفاده تراکنش ، موارداستفاده برای انواع خاص تراکنش و پین نامعتبر)</li>
+</ul>
+
+
+<div>
+
+<a name="ATM"></a>
+<hr>
+<p class="diagram">
+<img src="ATMStatechart.gif" alt="[ Statechart for overall ATM ]">
+<br>
+<a href="CRCCards.html#ATM">[ CRC Card for ATM ]</a>
+<a href="Interactions.html#Startup">[ Interaction diagram for Startup ]</a>
+<a href="Interactions.html#Shutdown">[ Interaction diagram for Shutdown ]</a>
+</p>
+
+<a name="Session"></a>
+<hr>
+<p class="diagram">
+<img src="SessionStatechart.gif" alt="[ Statechart for a session ]">
+<br>
+<a href="CRCCards.html#Session">[ CRC Card for Session ]</a>
+<a href="Interactions.html#Session">[ Interaction diagram for Session ]</a>
+</p>
+
+<a name="Transaction"></a>
+<hr>
+<p class="diagram">
+<img src="TransactionStatechart.gif" alt="[ Statechart for a transaction ]">
+<br>
+<a href="CRCCards.html#Transaction">[ CRC Card for Transaction ] </a>
+<a href="Interactions.html#Transaction">[ Interaction diagram for Transaction ]</a><br>
+<a href="CRCCards.html#Withdrawal">[ CRC Card for Withdrawal ]</a>
+<a href="Interactions.html#Withdrawal">[ Interaction diagram for portion unique to Withdrawal ]</a><br>
+<a href="CRCCards.html#Deposit">[ CRC Card for Deposit ]</a>
+<a href="Interactions.html#Deposit">[ Interaction diagram for portion unique to Deposit ]</a><br>
+<a href="CRCCards.html#Transfer">[ CRC Card for Transfer ]</a>
+<a href="Interactions.html#Transfer">[ Interaction diagram for portion unique to Transfer ]</a><br>
+<a href="CRCCards.html#Inquiry">[ CRC Card for Inquiry ]</a>
+<a href="Interactions.html#Inquiry">[ Interaction diagram for portion unique to Inquiry ]</a><br>
+<a href="Interactions.html#InvalidPIN">[ Interaction diagram for Invalid PIN Extension ]</a>
+
+
+</p>
+<hr>
+</div>
+
+<p class="navigation">
+<a href="ClassDiagram.html"><img src="Back.gif" alt="Link to previous page"></a>
+<a href="Interactions.html"><img src="Next.gif" alt="Link to next page"></a>
+</p>
+
+
+</body></html>

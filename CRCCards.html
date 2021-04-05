@@ -1,0 +1,475 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="UseCases_data/style.css">
+<title>CRC Cards for ATM Example</title>
+
+</head>
+
+<body>
+<h2>کارت های CRC برای نمونه خودپرداز</h2>
+
+<p>
+استفاده از کارت های CRC برای اختصاص دادن مسئولیت به کلاس های مختلف برای کارهای موردنیاز در موارد مختلف استفاده، منجر به ایجاد کارتهای زیر میشود.  
+</p>
+
+<p>
+برای رفتن مستقیم به کارت های CRC برای کلاس های مختلف میتوان از لینک های زیر استفاده کرد:
+</p>
+
+<ul>
+<li><a href="#ATM">کلاس دستگاه کارتخوان</a><br>&nbsp;</li>
+
+<li>اشیای مرزی/موجودیت/اجزای تشکیل دهنده خودپرداز<br>&nbsp;
+<ul>
+	<li><a href="#CardReader">کلاس کارتخوان</a></li>
+	<li><a href="#CashDispenser">کلاس پرداخت کننده پول</a></li>
+	<li><a href="#CustomerConsole">کلاس کنسول مشتری</a></li>
+	<li><a href="#EnvelopeAcceptor">کلاس گیرنده پاکت</a></li>
+	<li><a href="#Log">کلاس ورود به سیستم</a></li>
+	<li><a href="#NetworkToBank">کلاس اتصال به بانک</a></li>
+	<li><a href="#OperatorPanel">کلاس پنل اپراتور</a></li>
+	<li><a href="#ReceiptPrinter">کلاس چاپگر رسید</a></li>
+</ul><br>&nbsp;</li>
+<li>اشیا کنترل کننده مربوط به مواردمختلف استفاده هستند<br>&nbsp;
+<ul>
+	<li><a href="#Session">کلاس عملیات</a></li>
+	<li><a href="#Transaction">کلاس تراکنش</a></li>
+	<li><a href="#Withdrawal">کلاس برداشت</a></li>
+	<li><a href="#Deposit">کلاس سپرده</a></li>
+	<li><a href="#Transfer">کلاس انتقال</a></li>
+	<li><a href="#Inquiry">کلاس استعلام</a></li>
+</ul><br>&nbsp;</li>
+<li>اشیای نهادی هنگام واگذاری مسئولیت به اشیای دیگر ضروری به نظر می رسند<br>&nbsp;
+<ul> 
+	<li><a href="#Balances">کلاس مانده حساب</a></li>
+	<li><a href="#Card">کلاس کارت</a></li>
+	<li><a href="#Message">کلاس پیام</a></li>
+	<li><a href="#Receipt">کلاس رسید</a></li>
+	<li><a href="#Status">کلاس وضعیت</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="crccards">
+
+<a name="ATM">
+<hr>
+
+<h3>کلاس دستگاه کارتخوان</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>با روشن شدن سوئیچ راه اندازی شود</td><td><a href="#OperatorPanel">پنل کنترل</a>
+	<br><a href="#CashDispenser">پرداخت کننده پول</a>
+	<br><a href="#NetworkToBank">اتصال به بانک</a></td></tr> 
+<tr><td>با خاموش شدن سوئیچ خاموش شود</td><td><a href="#NetworkToBank">اتصال به بانک</a></td></tr> 
+<tr valign="top"><td>وقتی کارت توسط مشتری درج می شود عملیات جدیدی را شروع کنید</td><td><a href="#CustomerConsole">کنسول مشتری</a>
+	<br><a href="#Session">عملیات</a></td></tr>
+<tr><td>دسترسی به اجزای سازنده عملیات و تراکنش ها را فراهم می کند</td><td></td></tr>
+
+</tbody></table>
+
+</a><p><a name="ATM">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#ATM">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="CardReader">
+<hr>
+<h3>کلاس کارتخوان</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>هنگام قراردادن کارت، به دستگاه خودپرداز بگوید</td><td><a href="#ATM">دستگاه خودپرداز</a></td></tr> 
+<tr><td>اطلاعات را از کارت بخواند</td><td><a href="#Card">کارت</a></td></tr> 
+<tr><td>بیرون راندن کارت</td><td></td></tr> 
+<tr><td>نگه داشتن کارت</td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="CardReader">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#CardReader">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="CashDispenser">
+<hr>
+<h3>کلاس پرداخت کننده پول</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>پول نقد را در دست داشته باشید، از مقداراولیه شروع کنید</td><td></td></tr>
+<tr><td>گزارش دهید که آیا پول نقد کافی دردسترس است</td><td></td></tr> 
+<tr><td>پول نقد را توزیع کنید</td><td><a href="#Log">ورود به سیستم</a></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="CashDispenser">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#CashDispenser">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="CustomerConsole">
+<hr>
+<h3>کلاس کنسول مشتری</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>نمایش یک پیام</td><td></td></tr>
+<tr><td>درخواست را نمایش دهید، پین را از صفحه کلید بپذیرید</td><td></td></tr>
+<tr><td>منو نمایش دهید، یک انتخاب از صفحه کلید را بپذیرید</td><td></td></tr>
+<tr><td>مبلغ واردشده را از صفحه کلید بپذیرید</td><td></td></tr>
+<tr><td>به کلید لغو فشرده شده توسط مشتری پاسخ دهید</td><td></td></tr>
+
+</tbody></table>
+
+</a><p><a name="CustomerConsole">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#CustomerConsole">[ لینک برای این کلاس ]</a>
+</p>
+
+
+
+<a name="EnvelopeAcceptor">
+<hr>
+<h3>کلاس گیرنده پاکت</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>پذیرش پاکت نامه از مشتری؛در صورت اتمام یا لغو گزارش دهید</td><td><a href="#Log">ورود به سیستم</a></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="EnvelopeAcceptor">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#EnvelopeAcceptor">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Log">
+<hr>
+
+
+<h3>کلاس ورود به سیستم</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>پیام های ارسالی به بانک را وارد کنید</td><td></td></tr> 
+<tr><td>پاسخ های بانک را واردکنید</td><td></td></tr> 
+<tr><td>توزیع وجه نقد را واردکنید</td><td></td></tr>
+<tr><td>دریافت پاکت نامه</td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Log">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Log">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="NetworkToBank">
+<hr>
+<h3>کلاس اتصال به بانک</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>در هنگام راه اندازی اتصال به بانک را آغاز کنید</td><td></td></tr>
+<tr valign="top"><td>برای بانک پیام ارسال کنید ومنتظر پاسخ باشید</td><td><a href="#Message">پیام</a> <br>
+	 <a href="#Log">ورود به سیستم</a> <br>
+	 <a href="#Balances">مانده</a> <br>
+	 <a href="#Status">وضعیت</a> </td></tr> 
+<tr><td>قطع اتصال به بانک هنگام خاموش شدن</td><td></td></tr>
+
+</tbody></table>
+
+</a><p><a name="NetworkToBank">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#NetworkToBank">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="OperatorPanel">
+<hr>
+<h3>کلاس پنل اپراتور</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>خودپردازها را از تغییرات وضعیت سوئیچ مطلع کنید</td><td><a href="#ATM">دستگاه خودپرداز</a></td></tr> 
+<tr><td>به اپراتور اجازه دهید مقدار اولیه پول نقد را مشخص کند</td><td></td></tr>
+
+</tbody></table>
+
+</a><p><a name="OperatorPanel">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#OperatorPanel">[ لینک برای این کلاس ]</a>
+</p>
+
+
+
+<a name="ReceiptPrinter">
+<hr>
+<h3>کلاس چاپ رسید</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>رسید را چاپ کنید</td><td><a href="#Receipt">رسید</a></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="ReceiptPrinter">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#ReceiptPrinter">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Session">
+<hr>
+
+<h3>کلاس عملیات</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+<tr valign="top"><td>مورداستفاده عملیات را انجام دهید</td><td><a href="#ATM">دستگاه خودپرداز</a><br>
+	<a href="#CardReader">کارتخوان</a> <br>
+	<a href="#Card">کارت</a><br>
+	<a href="#CustomerConsole">کنسول مشتری</a> <br>
+	<a href="#Transaction">تراکنش</a> <br> 
+	 </td></tr>
+<tr><td>اگر مشتری مجبور است دوباره آن را وارد کند مقدار پین را به روز کنید</td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Session">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Session">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Transaction">
+<hr>
+
+
+<h3>کلاس انتزاعی تراکنش</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr valign="top"><td>به مشتری اجازه دهید نوع تراکنش را انتخاب کند</td><td><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ATM">دستگاه خودپرداز</a><br>
+	 <a href="#CustomerConsole">کنسول مشتری</a> <br>
+	 <a href="#Withdrawal">برداشت</a>  <br>
+	 <a href="#Deposit">سپرده</a>  <br>
+	 <a href="#Transfer">انتقال</a>  <br>
+	 <a href="#Inquiry">استعلام</a> </td></tr>
+<tr valign="top"><td>مورداستفاده تراکنش را انجام دهید</td><td><a href="#ATM">ATM</a><br>
+	 <a href="#CustomerConsole">کنسول مشتری</a> <br>
+	 <a href="#Withdrawal">برداشتl</a>  <br>
+	 <a href="#Deposit">سپرده</a>  <br>
+	 <a href="#Transfer">انتقال</a>  <br>
+	 <a href="#Inquiry">استعلام</a> <br>
+	 <a href="#Message">پیام</a> <br>
+	 <a href="#NetworkToBank">اتصال به بانک</a> <br>
+	 <a href="#Receipt">رسید</a> <br>
+	 <a href="#ReceiptPrinter">چاپ رسید</a></td></tr>
+<tr valign="top"><td>برنامه پین نامعتبر را انجام دهید</td><td><a href="#CustomerConsole">CustomerConsole</a> <br>
+	 <a href="#Session">عملیات</a> <br>
+	 <a href="#CardReader">کارتخوان</a></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Transaction">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Transaction">[ لینک برای این کلاس ]</a>
+</p>
+
+
+
+<a name="Withdrawal">
+<hr>
+<h3>کلاس برداشت</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr valign="top"><td>عملیات مختص مورداستفاده تراکنش برداشت را انجام دهید</td><td><a href="#CustomerConsole">کنسول مشتری</a> <br>
+	 <a href="#CashDispenser">پرداخت کننده پول</a> <br> <a href="#Message">پیام</a> <br>
+	 <a href="#Receipt">رسید</a> </td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Withdrawal">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Withdrawal">[ لینک برای این کلاس ]</a>
+</p>
+
+
+
+<a name="Deposit">
+<hr>
+
+<h3>کلاس سپرده</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr valign="top"><td>انجام عملیات مختص مورداستفاده تراکنش سپرده</td><td><a href="#CustomerConsole">کنسول مشتری</a> <br>
+	 <a href="#Message">پیام</a> <br> <a href="#EnvelopeAcceptor">گیرنده پاکت نامه</a> <br>
+	 <a href="#Receipt">رسید</a> </td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Deposit">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Deposit">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Transfer">
+<hr>
+
+
+<h3>کلاس انتقال</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr valign="top"><td>انجام عملیات مختص مورداستفاده تراکنش انتقال</td><td><a href="#CustomerConsole">CustomerConsole</a> <br>
+	 <a href="#Message">پیام</a> <br> <a href="#Receipt">رسید</a> </td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Transfer">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Transfer">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Inquiry">
+<hr>
+<h3>کلاس استعلام</h3>
+
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr valign="top"><td>انجام عملیات مختص مورداستفاده تراکنش استعلام</td><td><a href="#CustomerConsole">CustomerConsole</a> <br>
+	 <a href="#Message">پیام</a> <br> <a href="#Receipt">رسید</a></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Inquiry">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Inquiry">[ لینک برای این کلاس ]</a>
+</p>
+
+
+
+
+<a name="Balances">
+<hr>
+
+<h3>کلاس مانده حساب</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>اطلاعات موجودی حساب را که توسط بانک برگردانده شده نشان دهید</td><td></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Balances">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Balances">[ لینک برای این کلاس ]</a>
+</p>
+
+
+
+<a name="Card">
+<hr>
+
+<h3>کلاس کارت</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>اطلاعات رمزگذاری شده روی کارت خودپرداز مشتری را نشان می دهد</td><td></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Card">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Card">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Message">
+<hr>
+
+<h3>کلاس پیام</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>اطلاعاتی را که باید از طریق شبکه به بانک ارسال شود را نشان می دهد</td><td></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Message">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Message">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Receipt">
+<hr>
+
+<h3>کلاس رسید</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>اطلاعاتی را که باید در رسید چاپ شود نشان می دهد</td><td></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Receipt">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Receipt">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<a name="Status">
+<hr>
+
+<h3>کلاس وضعیت</h3>
+<table class="crc" width="100%">
+<tbody><tr><th width="70%">مسئولیت ها</th><th width="30%">همکاران</th></tr>
+ 
+<tr><td>اطلاعات وضعیت تراکنش را که توسط بانک برگردانده شده نشان می دهد</td><td></td></tr> 
+<tr><td></td><td></td></tr> 
+
+</tbody></table>
+
+</a><p><a name="Status">
+</a><a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/ClassLinks.html#Status">[ لینک برای این کلاس ]</a>
+</p>
+
+
+<hr>
+
+</div>
+
+<p class="navigation">
+<a href="AnalysisClasses.html"><img src="CRCCards_data/Back.gif" alt="Link to previous page"></a>
+<a href="ClassDiagram.html"><img src="CRCCards_data/Next.gif" alt="Link to next page"></a>
+</p>
+
+<p>
+<a href="http://www.math-cs.gordon.edu/courses/cs211/ATMExample/Links.html">Page of links for non frames-enabled browsers.</a>
+</p>
+
+<p>
+<a href="http://validator.w3.org/check/referer">
+<img class="XHTML_image" src="CRCCards_data/XHTML_validation_image.gif" alt="Valid XHTML 1.0!" width="88" height="31">
+</a>
+</p>
+  
+<h6>Copyright © 2000, 2001, 2002 - Russell C. Bjork.  Permission for non-commercial 
+reproduction for educational use is hereby granted; all other rights are reserved.</h6>
+
+
+
+</body></html>
